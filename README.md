@@ -1,0 +1,143 @@
+# 🚀 Team Task Manager (Full Stack)
+
+A full-stack web application where users can create projects, assign tasks, and track progress with **role-based access control (Admin / Member)**.
+
+---
+
+## 🌐 Live Demo
+
+👉 Frontend: (Add your link)  
+👉 Backend API: (Add your Railway link)
+
+---
+
+## 🧠 Features
+
+### 🔐 Authentication
+- Signup / Login with JWT
+- Secure password hashing (bcrypt)
+- Persistent login (localStorage)
+
+### 👥 Role-Based Access
+- **Admin**
+  - Create Projects
+  - Assign Tasks to members
+  - View all users
+- **Member**
+  - View assigned tasks
+  - Update task status
+
+### 📁 Project Management
+- Create projects
+- Add team members
+
+### ✅ Task Management
+- Create & assign tasks
+- Set task status:
+  - Pending
+  - In Progress
+  - Completed
+
+### 📊 Dashboard
+- View all tasks
+- Track status
+- Manage workflow
+
+---
+
+## ⚙️ Tech Stack
+
+### 🖥️ Frontend
+- React.js
+- React Router
+- Context API (Auth)
+- Axios
+- CSS / Tailwind (optional)
+
+### ⚙️ Backend
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- JWT Authentication
+- bcryptjs
+
+---
+
+## 📂 Folder Structure
+root/
+│
+├── backend/
+│ ├── controllers/
+│ ├── models/
+│ ├── routes/
+│ ├── middleware/
+│ ├── config/
+│ ├── .env
+│ └── index.js
+│
+├── frontend/
+│ ├── src/
+│ │ ├── pages/
+│ │ ├── components/
+│ │ ├── context/
+│ │ ├── services/
+│ │ └── App.jsx
+│
+└── README.md
+
+---
+
+## 🔐 API Endpoints
+
+### Auth
+| Method | Endpoint | Description |
+|------|---------|------------|
+| POST | /api/auth/signup | Register user |
+| POST | /api/auth/login | Login user |
+| GET | /api/auth/users | Get all users |
+
+---
+
+### Projects
+| Method | Endpoint | Description |
+|------|---------|------------|
+| POST | /api/projects | Create project |
+| GET | /api/projects | Get all projects |
+| POST | /api/projects/add-member | Add member |
+
+---
+
+### Tasks
+| Method | Endpoint | Description |
+|------|---------|------------|
+| POST | /api/tasks | Create & assign task |
+| GET | /api/tasks | Get tasks |
+| PUT | /api/tasks/:id | Update status |
+
+---
+
+## 🛡️ Authentication Flow
+
+1. User logs in
+2. JWT token generated
+3. Token stored in localStorage
+4. Sent in headers:
+
+Authorization: Bearer <token>
+
+
+---
+
+## 🎯 Role-Based Logic
+
+```js
+if (user.role === "admin") {
+  // can assign task
+} else {
+  // only view/update
+}
+``` id="7x0d1w"
+
+---
+
+## 🧪
